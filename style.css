@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f5fff7;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: #4CAF50;
+  color: white;
+  padding: 1em 2em;
+  text-align: center;
+}
+
+nav {
+  margin-top: 0.5em;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  background: url('https://source.unsplash.com/1600x400/?farm,climate') no-repeat center center/cover;
+  padding: 4em 2em;
+  text-align: center;
+  color: white;
+}
+
+.hero h2 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.btn {
+  background: #4CAF50;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 1em;
+  display: inline-block;
+}
+
+.features, .solutions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5em;
+  padding: 2em;
+  background-color: #fff;
+}
+
+.features div, .solutions article {
+  background: #e8f5e9;
+  padding: 1.5em;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+  background: #2e7d32;
+  color: white;
+  position: relative;
+  bottom: 0;
+}
+
+.solutions article {
+  background-color: #e8f5e9;
+  padding: 1.5em;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  color: #333;
+}
+
+.solutions article:hover {
+  color: white;
+}
+
+/* Create a pseudo-element for the background image */
+.solutions article::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.solutions article:hover::before {
+  opacity: 1;
+}
+
+/* Ensure text is above the background image */
+.solutions article * {
+  position: relative;
+  z-index: 1;
+}
+
+header h1 {
+  font-size: 2.2em;
+  font-weight: 800;
+  text-align: center;
+  color: white;
+  background: linear-gradient(90deg,#2e8b57,#1e901eFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  letter-spacing:1px;
+  margin-bottom: 0.5em;
+}

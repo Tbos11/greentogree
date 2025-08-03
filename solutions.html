@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solutions | AgroGreen</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+ <body style="background-image: url('images/agriculture-solutions-to-resist-climate-changes.jpg') ; background-size : cover" >
+  <header>
+    <h1>Our Green Solutions</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="solutions.html">Solutions</a>
+    </nav>
+  </header>
+
+  <section class="solutions" style="background-image: url('images/original.jpg') ; background-size : cover"  >
+    <article data-img="images/climate-smart.jpg">
+      <h2>1. Climate-Smart Agriculture</h2>
+      <p>Climate-smart practices improve yields while reducing GHG emissions.</p>
+    </article>
+
+    <article data-img="images/regenerative.jpg">
+      <h2>2. Organic & Regenerative Farming</h2>
+      <p>Soil-friendly methods that increase carbon sequestration.</p>
+    </article>
+
+    <article data-img="images/solar-tech.jpg">
+      <h2>3. Eco-Friendly Technologies</h2>
+      <p>Use of solar-powered pumps, AI sensors, and biodegradable packaging.</p>
+    </article>
+
+    <article data-img="images/community.jpg">
+      <h2>4. Education & Community Involvement</h2>
+      <p>Training farmers and communities to embrace sustainability.</p>
+    </article>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 GreentoGreen. All rights reserved.</p>
+  </footer>
+
+<script>
+  document.querySelectorAll('.solutions article').forEach(article => {
+    const img = article.getAttribute('data-img');
+    article.style.setProperty('--hover-img', `url('${img}')`);
+    article.querySelector('::before'); // Force pseudo-element reference
+    article.style.setProperty('--hover-img', `url(${img})`);
+
+    const style = document.createElement('style');
+    style.textContent = `
+      article[data-img="${img}"]::before {
+        background-image: url('${img}');
+      }
+    `;
+    document.head.appendChild(style);
+  });
+</script>
+</body>
+</html>
